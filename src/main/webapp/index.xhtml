@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<f:view contentType="text/html" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<html lang="en">
+<h:head>
+<title>Reservas Hotel</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+
+<!-- css files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //css files -->
+
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Ubuntu+Condensed&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext" rel="stylesheet" />
+<!--//online-fonts -->
+</h:head>
+<h:body>
+<div class="header">
+	<h1>Reservas Hotel</h1>
+</div>
+
+<div class="w3-main">
+	<!-- Main -->
+	<div class="about-bottom">
+		<div class="w3l_about_bottom_right two">
+			<h2 class="tittle">Formulario</h2>
+			<div class="book-form">
+
+			    <h:form id="form">
+			    	<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+			    
+					<div class="form-date-w3-agileits">
+						<label> Nombre :</label>
+						<p:inputText id="name" value="#{formController.reserva.nombre}" requiredMessage="" />
+					</div>
+					<div class="form-date-w3-agileits second-agile">
+						<label> Email :</label>
+						<p:inputText id="email" value="#{formController.reserva.email}" requiredMessage="" />
+					</div>
+					<div class="form-date-w3-agileits">
+						<label> Fecha Entrada :</label>
+						<p:calendar id="datepicker" value="#{formController.reserva.fechaEntrada}" />
+					</div>
+					<div class="form-date-w3-agileits">
+						<label> Fecha Salida :</label>
+						<p:calendar id="datepicker1" value="#{formController.reserva.fechaSalida}" />
+									
+					</div>
+					
+					<div class="form-date-w3-agileits">
+						<h:outputLabel rendered="#{formController.reserva.token != null}"> Reserva Realizada :</h:outputLabel>
+						<h:outputText id="reservaRealizada" value="#{formController.reserva.token}" rendered="#{formController.reserva.token != null}" />
+									
+					</div>
+					
+					<div class="make wow shake">
+						<p:commandButton value="Reservar" id="reservar" update="form" actionListener="#{formController.submit}" />
+					</div>
+					
+					<p:separator />
+					
+					<div class="make wow shake">
+						<p:commandButton value="Reset" id="reset" update="form" actionListener="#{formController.reset}" />
+					</div>
+				</h:form>
+			</div>
+
+		</div>
+		<div class="w3l_about_bottom_left">
+			
+			<img src="images/real1.jpg" alt="" class="img-responsive" />
+		</div>
+		
+		<div class="clear"> </div>
+	</div>
+</div>
+<!-- //Main -->
+
+<!-- footer -->
+<div class="footer-w3l">
+	<p>2017 Reservas Hotel</p>
+</div>
+<!-- //footer -->
+
+</h:body>
+</html>
+
+</f:view>
